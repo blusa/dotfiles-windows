@@ -1,15 +1,5 @@
 {
   "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/master/schema.asc.json",
-  "Spinlock Condor Turbo": {
-    "manage": [
-      {
-        "kind": "Exe",
-        "id": "Spinlock Condor Turbo.exe",
-        "matching_strategy": "Equals",
-        "workspace": 5
-      }
-    ]
-  },
   "1Password": {
     "ignore": [
       {
