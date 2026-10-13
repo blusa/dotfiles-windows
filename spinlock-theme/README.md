@@ -6,14 +6,23 @@ Theme de Windows "Spinlock NMR":
 - Screensaver: `SpinlockNMR.scr`.
 - Modo oscuro y acento cian del logo.
 
-Los fondos y el `.scr` vienen de [dotfiles-macos](https://github.com/blusa/dotfiles-macos)
-(`wallpapers/` y `omarchy/spinlock-scr/`), así que ese repo tiene que estar clonado.
+## Para compartir
+
+`build.ps1` arma `dist\SpinlockNMR-theme.zip` (~900 KB), que se instala en cualquier PC sin los repos:
+descomprimir y doble click en `instalar.cmd` (sin admin). Ver `LEER.txt`, que va adentro del zip.
 
 ```powershell
-.\install.ps1                                   # usa ~\dotfiles-macos y aplica el theme
-.\install.ps1 -DotfilesMacos D:\repos\dotfiles-macos -SlideshowMinutes 60
-.\install.ps1 -NoApply                          # solo genera el .theme
+.\build.ps1                                   # usa ~\dotfiles-macos
+.\build.ps1 -Install                          # además lo instala en esta PC
+.\build.ps1 -DotfilesMacos D:\repos\dotfiles-macos -SlideshowMinutes 60
 ```
 
-Instala en `%LOCALAPPDATA%\SpinlockNMR\` y deja el theme en
-`%LOCALAPPDATA%\Microsoft\Windows\Themes\SpinlockNMR.theme` (aparece en Configuración → Personalización → Temas).
+Los fondos y el `.scr` salen de [dotfiles-macos](https://github.com/blusa/dotfiles-macos)
+(`wallpapers/` y `omarchy/spinlock-scr/`), así que para armar el zip ese repo tiene que estar clonado.
+
+## Por qué zip y no solo un .deskthemepack
+
+- Un `.deskthemepack` (CAB con el `.theme` y los fondos) no puede llevar el `.scr`: Windows lo descarta al extraerlo.
+- Windows 11 ignora la sección `[boot] SCRNSAVE.EXE` de los `.theme`, así que el screensaver
+  lo configura `instalar.cmd` en `HKCU\Control Panel\Desktop`.
+- Con Configuración abierta el theme no se aplica: `instalar.cmd` la cierra antes.

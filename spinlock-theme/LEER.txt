@@ -1,0 +1,15 @@
+Theme Spinlock NMR para Windows
+================================
+
+Descomprimí el zip y hacé doble click en instalar.cmd.
+
+Eso instala el screensaver y aplica el theme: los tres fondos de Spinlock rotando
+cada 30 minutos, modo oscuro y acento cian. No hace falta ser administrador.
+
+Windows puede avisar que los archivos vienen de internet o no están firmados
+(SmartScreen): "Más información" -> "Ejecutar de todas formas".
+
+A mano, sin el .cmd:
+  1. Doble click en SpinlockNMR.deskthemepack (fondos y colores).
+  2. Click derecho en SpinlockNMR.scr -> Instalar (screensaver).
+     Ojo: así queda apuntando al .scr donde esté, no lo borres después.
